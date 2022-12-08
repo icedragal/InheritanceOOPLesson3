@@ -153,14 +153,12 @@ public class Car extends Transport{
     }
     @Override
     public String toString() {
-        return getBrand() + " " + getModel() + " " +
-                getYear()+ " года выпуска, страна сборки: " + getCountry() + ", " +
-                getColor() + " цвет, объем двигателя — " + engineVolume +
+        return super.toString() +
+                ", объем двигателя — " + engineVolume +
                 " л., тип коробки передач:  " + transmissionType +
                 ", тип кузова: " + bodyworkType +
                 ", регистрационный номер: " + registrationNumber +
                 ", количество сидячи мест: " + numberOfSeats +
-                ", максимальная скорость движения: " + getMaxSpeed() + " км/ч" +
                 ", резина: " + (isSummerTires ? "летняя, " : "зимняя, ") +
                 (key.remoteRunEngine ? "удаленный запуск, " : "обычный запуск, ") +
                 (key.withoutKeyAccess ? "безключевой доступ " : "ключевой доступ ") +

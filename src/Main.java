@@ -10,5 +10,10 @@ public class Main {
         System.out.println(bmw);
         System.out.println(kia);
         System.out.println(hyundai);
+
+        Train lastochka = new Train("Поезд Ласточка", "B-901", 2011, "Россия", 301, 3500, 1, "Белорусский вокзал", "Минск-Пассажирский", 11);
+        Train lenin = new Train("Поезд «Ленинград»", "D-125", 2019, "Россия", 270, 1700, 2, "Ленинградский вокзал", "Ленинград-Пассажирский", 8);
+        System.out.println(lastochka);
+        System.out.println(lenin);
     }
 }
