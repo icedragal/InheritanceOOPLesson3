@@ -72,7 +72,7 @@ public class Transport {
     public String toString() {
         return brand + " " + model + " " +
                 year + " года выпуска, страна сборки: " + country +
-                ", цвет:" + color  +
+                ", цвет: " + color  +
                 ", максимальная скорость движения: " + maxSpeed + " км/ч";
     }
 }
