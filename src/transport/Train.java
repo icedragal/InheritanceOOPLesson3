@@ -7,8 +7,8 @@ public class Train extends Transport{
     private String arrivalStation;
     private int wagonsNumber;
 
-    public Train(String brand, String model, int year, String country,  double maxSpeed, double priceTrip, int timeTrip, String departureStation, String arrivalStation, int wagonsNumber) {
-        super(brand, model, year, country, "Стандарт", maxSpeed);
+    public Train(String brand, String model, int year, String country,  double maxSpeed, double fuelPercentage, double priceTrip, int timeTrip, String departureStation, String arrivalStation, int wagonsNumber) {
+        super(brand, model, year, country, "Стандартная раскраска РЖД", maxSpeed, fuelPercentage);
         setPriceTrip(priceTrip);
         setHourTrip(timeTrip);
         setDepartureStation(departureStation);
@@ -64,6 +64,12 @@ public class Train extends Transport{
         if (wagonsNumber > 0) {
             this.wagonsNumber = wagonsNumber;
         } else this.wagonsNumber = 5;
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("Поезд нужно заправлять дизелем");
+        setFuelPercentage(100);
     }
 
     @Override

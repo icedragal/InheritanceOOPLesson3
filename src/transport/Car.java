@@ -13,8 +13,8 @@ public class Car extends Transport{
     private Insurance insurance;
 
 
-    public Car(String brand, String model, int year, String country, String color, double maxSpeed, float engineVolume, String transmissionType, String bodyworkType, String registrationNumber, int numberOfSeats, Boolean isTiresSummer, Key key, Insurance insurance) {
-        super(brand, model, year, country, color, maxSpeed);
+    public Car(String brand, String model, int year, String country, String color, double maxSpeed, double fuelPercentage, float engineVolume, String transmissionType, String bodyworkType, String registrationNumber, int numberOfSeats, Boolean isTiresSummer, Key key, Insurance insurance) {
+        super(brand, model, year, country, color, maxSpeed, fuelPercentage);
 
         if (engineVolume > 0) {
             this.engineVolume = engineVolume;
@@ -50,7 +50,7 @@ public class Car extends Transport{
 
     }
     public Car(String brand, String model, int year, String country, String color, float engineVolume) {
-        this(brand, model,year, country, color,120, engineVolume, "Автомат", "Седан", "d231aa131", 4, true, new Key(), new Insurance());
+        this(brand, model,year, country, color,120, 0, engineVolume, "Автомат", "Седан", "d231aa131", 4, true, new Key(), new Insurance());
 
     }
 
@@ -153,6 +153,13 @@ public class Car extends Transport{
         }
         return true;
     }
+
+    @Override
+    public void refill() {
+        System.out.println("Автомобиль  можно заправлять бензином, дизелем на заправке или заряжать на специальных электропарковках, если это электрокар");
+        setFuelPercentage(100);
+    }
+
     @Override
     public String toString() {
         return super.toString() +

@@ -1,18 +1,21 @@
 package transport;
 
-public class Transport {
+import java.text.DecimalFormat;
+
+public abstract class Transport {
     private final String brand;
     private final String model;
     private final int year;
     private final String country;
     private String color;
     private double maxSpeed;
+    private double fuelPercentage;
 
     public Transport(String brand, String model, int year, String country) {
-        this(brand, model, year, country, "Белый", 120);
+        this(brand, model, year, country, "Белый", 120, 50.00);
     }
 
-    public Transport(String brand, String model, int year, String country, String color, double maxSpeed) {
+    public Transport(String brand, String model, int year, String country, String color, double maxSpeed, double fuelPercentage) {
         if (brand != null && !brand.isEmpty() && !brand.isBlank()) {
             this.brand = brand;
         } else this.brand = "default";
@@ -30,8 +33,9 @@ public class Transport {
         } else this.country = "default";
 
         setColor(color);
-
         setMaxSpeed(maxSpeed);
+        setFuelPercentage(fuelPercentage);
+
     }
 
     public String getBrand() {
@@ -70,11 +74,24 @@ public class Transport {
         } else this.maxSpeed = 120;
     }
 
+    public double getFuelPercentage() {
+        return fuelPercentage;
+    }
+
+    public void setFuelPercentage(double fuelPercentage) {
+        if (fuelPercentage >= 0 && fuelPercentage <=100) {
+            this.fuelPercentage = fuelPercentage;
+        } else System.out.println("Сколько ты хочешь заправить?!");
+    }
+
+    public abstract void refill();
+
     @Override
     public String toString() {
         return brand + " " + model + " " +
                 year + " года выпуска, страна сборки: " + country +
                 ", цвет: " + color  +
-                ", максимальная скорость движения: " + maxSpeed + " км/ч";
+                ", максимальная скорость движения: " + maxSpeed + " км/ч"+
+                ", количество топлива: " + ( new DecimalFormat("#.00").format(fuelPercentage)) + "%";
     }
 }
