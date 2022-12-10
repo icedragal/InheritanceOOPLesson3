@@ -1,3 +1,5 @@
+package transport;
+
 public class Train extends Transport{
     private double priceTrip;
     private int hourTrip;

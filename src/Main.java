@@ -1,3 +1,7 @@
+import transport.Bus;
+import transport.Car;
+import transport.Train;
+
 public class Main {
     public static void main(String[] args) {
         Car granta = new Car("Lada", "Granta", 2015, "Россия", "Желтый",110 , 1.7F, "Механическая","универсал","p231jh374",6, false, null, null);

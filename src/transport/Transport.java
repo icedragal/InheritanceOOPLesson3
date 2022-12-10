@@ -1,3 +1,5 @@
+package transport;
+
 public class Transport {
     private final String brand;
     private final String model;
